@@ -17,24 +17,30 @@ This script automates the generation of executive technical summaries for Jira t
 1. Open your Google Sheet.
 2. Go to **Extensions > Apps Script**.
 3. Create a new script file (e.g., `getGleanSummary.js`) and paste the contents of `getGleanSummary.js` into it.
+4. **Update the `apiUrl` variable in the code to use your company's Glean API endpoint.**
+   - Example:
+     ```js
+     const apiUrl = "https://<company_URL>.com/rest/api/v1/chat";
+     // Replace <company_URL> with your actual company Glean domain
+     ```
 
-### 2. Set the Glean API Key Property
-The script requires an API key to authenticate with your company's Glean API endpoint. Store this key securely using Google Apps Script Properties:
+### 2. Set the Glean Chat API Key Property
+The script requires a Glean Chat API key to authenticate with the external summarization API. Store this key securely using Google Apps Script Properties:
 
 1. In the Apps Script editor, click on the gear icon (⚙️) in the left sidebar and select **Project properties**.
 2. Go to the **Script properties** tab.
 3. Click **Add row**.
-4. Enter `API_KEY` as the **Name** and paste your API key as the **Value**.
+4. Enter `API_KEY` as the **Name** and paste your Glean Chat API key as the **Value**.
 5. Click **Save**.
 
 Alternatively, you can set the property programmatically:
 ```js
-// In the Apps Script editor, run this function once with your API key
+// In the Apps Script editor, run this function once with your Glean Chat API key
 function setApiKey() {
-  PropertiesService.getScriptProperties().setProperty('API_KEY', 'YOUR_API_KEY_HERE');
+  PropertiesService.getScriptProperties().setProperty('API_KEY', 'YOUR_GLEAN_CHAT_API_KEY_HERE');
 }
 ```
-Replace `'YOUR_API_KEY_HERE'` with your actual API key and run the function.
+Replace `'YOUR_GLEAN_CHAT_API_KEY_HERE'` with your actual Glean Chat API key and run the function.
 
 ### 3. Usage in Google Sheets
 You can use the `summarizeJira` function directly in your Google Sheet:
@@ -45,7 +51,7 @@ You can use the `summarizeJira` function directly in your Google Sheet:
 This will return a formatted executive summary for the specified Jira ticket.
 
 ## Security Notes
-- The API key is stored securely in script properties and is not exposed in the code.
+- The Glean Chat API key is stored securely in script properties and is not exposed in the code.
 - Ensure you do not share your API key or expose it in public repositories.
 
 ## Customization & Extensibility
@@ -53,7 +59,7 @@ This will return a formatted executive summary for the specified Jira ticket.
 - For advanced formatting, integrate a markdown library or enhance the `formatSummary` function.
 
 ## Troubleshooting
-- If you see `Error fetching summary.`, check that your API key is set correctly and that the external API is reachable.
+- If you see `Error fetching summary.`, check that your Glean Chat API key is set correctly and that the external API is reachable.
 - Use the Apps Script **Logger** for debugging by viewing logs via **View > Logs** in the Apps Script editor.
 
 ## License
