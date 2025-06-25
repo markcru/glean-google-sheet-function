@@ -18,8 +18,8 @@ This script automates the generation of executive technical summaries for Jira t
 2. Go to **Extensions > Apps Script**.
 3. Create a new script file (e.g., `getGleanSummary.js`) and paste the contents of `getGleanSummary.js` into it.
 
-### 2. Set the API Key Property
-The script requires an API key to authenticate with the external summarization API. Store this key securely using Google Apps Script Properties:
+### 2. Set the Glean API Key Property
+The script requires an API key to authenticate with your company's Glean API endpoint. Store this key securely using Google Apps Script Properties:
 
 1. In the Apps Script editor, click on the gear icon (⚙️) in the left sidebar and select **Project properties**.
 2. Go to the **Script properties** tab.
