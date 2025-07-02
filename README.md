@@ -2,6 +2,10 @@
 
 This script automates the generation of executive technical summaries for Jira tickets by aggregating and synthesizing information from Jira, GitHub, and Slack. It is designed for use in Google Apps Script environments, such as Google Sheets, and leverages an external API to process and summarize data.
 
+
+https://github.com/user-attachments/assets/c4bb9a6f-1fcc-4987-aeda-8d41757c2ed4
+
+
 ## Features
 - Aggregates data from Jira, GitHub, and Slack for a given Jira ticket.
 - Extracts user impact, root causes, PR details, and relevant Slack discussions.
